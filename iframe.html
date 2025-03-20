@@ -2,13 +2,15 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Play MP3</title>
+    <title>Riproduzione MP3 ogni 4 minuti</title>
 </head>
 <body>
-    <audio id="player" autoplay loop>
-        <source src="media.mp3" type="audio/mpeg">
-        Il tuo browser non supporta l'audio HTML5.
-    </audio>
+    <audio id="audioPlayer" src="media.mp3"></audio>
+    <script>
+        const audioPlayer = document.getElementById('audioPlayer');
+        setInterval(() => {
+            audioPlayer.play();
+        }, 240000); // 240000 millisecondi = 4 minuti
+    </script>
 </body>
 </html>
